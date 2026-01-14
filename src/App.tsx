@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import './App.css'
 
@@ -6,7 +7,7 @@ interface Todo {
   task: string
 }
 
-function App() {
+
   const [todos, setTodos] = useState<Todo[]>([])
   const [newTask, setNewTask] = useState('')
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -14,7 +15,8 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const API_BASE = 'http://localhost:5002/todos'
+  // .env 환경변수에서 백엔드 URL을 불러옵니다.
+  const API_BASE = `${import.meta.env.VITE_BACKEND_URL}/todos`
 
   useEffect(() => {
     fetchTodos()
