@@ -2,12 +2,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-interface Todo {
 
-  interface Todo {
-    _id: string
-    task: string
-  }
+interface Todo {
+  _id: string
+  task: string
+}
 
   function App() {
     const [todos, setTodos] = useState<Todo[]>([])
